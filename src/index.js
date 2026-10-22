@@ -14,7 +14,7 @@ app.post('/webhook', async (req, res) => {
   try {
     await handleUpdate(req.body);
   } catch (err) {
-    console.error('Webhook handler error:', err.message);
+    console.error('Webhook handler error:', err.response?.data ?? err.message);
   }
 });
 
